@@ -56,7 +56,12 @@ const CONFIG = {
 const TEMPLATES_RULE = {
     test: /\.(html|ejs)$/,
     include: PATH.resolve(__dirname, "src"),
-    loader: "html-loader"
+    use: [{
+        loader: "html-loader",
+        options: {
+            attrs: ["img:src", "a:href"]
+        } 
+    }]
 };
 
 // scripts
